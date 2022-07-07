@@ -1,4 +1,4 @@
-# Codevolution Algorithms Tutorial
+# Data Structures and Algorithms
 
 An introduction to the fundamentals of algorithms.
 
