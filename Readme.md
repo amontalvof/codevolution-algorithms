@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-An introduction to the fundamentals of algorithms.
+An introduction to the fundamentals of data structures and algorithms.
 
 ## Technologies
 
