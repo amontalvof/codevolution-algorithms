@@ -20,12 +20,28 @@ class LinkedList {
     }
 
     prepend(value) {
+        // * Add a node to the beginning of the list, Big-O = O(1)
         const node = new Node(value);
         if (this.isEmpty()) {
             this.head = node;
         } else {
             node.next = this.head;
             this.head = node;
+        }
+        this.size++;
+    }
+
+    append(value) {
+        // * Add a node to the end of the list, Big-O = O(n)
+        const node = new Node(value);
+        if (this.isEmpty()) {
+            this.head = node;
+        } else {
+            let curr = this.head;
+            while (curr.next) {
+                curr = curr.next;
+            }
+            curr.next = node;
         }
         this.size++;
     }
@@ -53,4 +69,9 @@ l.prepend(10);
 l.print();
 l.prepend(20);
 l.prepend(30);
+l.print();
+l.append(40);
+l.print();
+l.append(50);
+l.append(60);
 l.print();
