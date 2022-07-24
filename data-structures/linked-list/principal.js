@@ -65,6 +65,27 @@ class LinkedList {
         }
     }
 
+    removeFrom(index) {
+        // * Remove a node from a given index, worst scenario Big-O = O(n)
+        if (index < 0 || index >= this.size) {
+            return null;
+        }
+        let removedNode;
+        if (index === 0) {
+            removedNode = this.head;
+            this.head = this.head.next;
+        } else {
+            let prev = this.head;
+            for (let i = 0; i < index - 1; i++) {
+                prev = prev.next;
+            }
+            removedNode = prev.next;
+            prev.next = removedNode.next;
+        }
+        this.size--;
+        return removedNode.value;
+    }
+
     print() {
         if (this.isEmpty()) {
             console.log('List is empty');
@@ -100,4 +121,8 @@ l.insert(9, 1);
 l.print();
 l.insert(15, 2);
 l.print();
+console.log('List size:', l.getSize());
+console.log('Removed:', l.removeFrom(10));
+console.log('Removed:', l.removeFrom(0));
+console.log('Removed:', l.removeFrom(1));
 console.log('List size:', l.getSize());
