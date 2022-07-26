@@ -11,16 +11,18 @@ class LinkedList {
         this.size = 0;
     }
 
+    // * Check if the list is empty, Big-O = O(1)
     isEmpty() {
         return this.size === 0;
     }
 
+    // * Get the size of the list, Big-O = O(1)
     getSize() {
         return this.size;
     }
 
+    // * Add a node to the beginning of the list, Big-O = O(1)
     prepend(value) {
-        // * Add a node to the beginning of the list, Big-O = O(1)
         const node = new Node(value);
         if (this.isEmpty()) {
             this.head = node;
@@ -31,8 +33,8 @@ class LinkedList {
         this.size++;
     }
 
+    // * Add a node to the end of the list, Big-O = O(n)
     append(value) {
-        // * Add a node to the end of the list, Big-O = O(n)
         const node = new Node(value);
         if (this.isEmpty()) {
             this.head = node;
@@ -46,8 +48,8 @@ class LinkedList {
         this.size++;
     }
 
+    // * Insert a node at a given index, worst scenario Big-O = O(n)
     insert(value, index) {
-        // * Insert a node at a given index, worst scenario Big-O = O(n)
         if (index < 0 || index > this.size) {
             return;
         }
@@ -65,8 +67,8 @@ class LinkedList {
         }
     }
 
+    // * Remove a node from a given index, worst scenario Big-O = O(n)
     removeFrom(index) {
-        // * Remove a node from a given index, worst scenario Big-O = O(n)
         if (index < 0 || index >= this.size) {
             return null;
         }
@@ -86,6 +88,31 @@ class LinkedList {
         return removedNode.value;
     }
 
+    // * Remove a node from a given value, worst scenarioBig-O = O(n)
+    removeValue(value) {
+        if (this.isEmpty()) {
+            return null;
+        }
+        if (this.head.value === value) {
+            this.head = this.head.next;
+            this.size--;
+            return value;
+        } else {
+            let prev = this.head;
+            while (prev.next && prev.next.value !== value) {
+                prev = prev.next;
+            }
+            if (prev.next) {
+                const removedNode = prev.next;
+                prev.next = removedNode.next;
+                this.size--;
+                return value;
+            }
+            return null;
+        }
+    }
+
+    // * Print the list, Big-O = O(n)
     print() {
         if (this.isEmpty()) {
             console.log('List is empty');
@@ -125,4 +152,12 @@ console.log('List size:', l.getSize());
 console.log('Removed:', l.removeFrom(10));
 console.log('Removed:', l.removeFrom(0));
 console.log('Removed:', l.removeFrom(1));
+console.log('List size:', l.getSize());
+l.print();
+console.log('Removed:', l.removeValue(10));
+l.print();
+console.log('Removed:', l.removeValue(9));
+l.print();
+console.log('Removed:', l.removeValue(67));
+l.print();
 console.log('List size:', l.getSize());
