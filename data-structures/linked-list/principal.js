@@ -112,6 +112,23 @@ class LinkedList {
         }
     }
 
+    // * Search for a node with a given value, Big-O = O(n)
+    search(value) {
+        if (this.isEmpty()) {
+            return -1;
+        }
+        let i = 0;
+        let curr = this.head;
+        while (curr) {
+            if (curr.value === value) {
+                return i;
+            }
+            curr = curr.next;
+            i++;
+        }
+        return -1;
+    }
+
     // * Print the list, Big-O = O(n)
     print() {
         if (this.isEmpty()) {
@@ -161,3 +178,4 @@ l.print();
 console.log('Removed:', l.removeValue(67));
 l.print();
 console.log('List size:', l.getSize());
+console.log(l.search(30));
