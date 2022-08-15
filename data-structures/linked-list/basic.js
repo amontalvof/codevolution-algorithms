@@ -48,7 +48,7 @@ class LinkedList {
         this.size++;
     }
 
-    // * Insert a node at a given index, worst scenario Big-O = O(n)
+    // * Insert a node at a given index, worst scenario, Big-O = O(n)
     insert(value, index) {
         if (index < 0 || index > this.size) {
             return;
@@ -67,7 +67,7 @@ class LinkedList {
         }
     }
 
-    // * Remove a node from a given index, worst scenario Big-O = O(n)
+    // * Remove a node from a given index, worst scenario, Big-O = O(n)
     removeFrom(index) {
         if (index < 0 || index >= this.size) {
             return null;
@@ -88,7 +88,7 @@ class LinkedList {
         return removedNode.value;
     }
 
-    // * Remove a node from a given value, worst scenarioBig-O = O(n)
+    // * Remove a node from a given value, worst scenario, Big-O = O(n)
     removeValue(value) {
         if (this.isEmpty()) {
             return null;
