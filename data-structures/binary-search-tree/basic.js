@@ -64,3 +64,5 @@ bst.insert(7);
 bst.insert(13);
 bst.insert(17);
 bst.insert(2);
+console.log(bst.search(bst.root, 10));
+console.log(bst.search(bst.root, 7));
