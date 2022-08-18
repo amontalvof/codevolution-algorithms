@@ -39,6 +39,19 @@ class BinarySearchTree {
             }
         }
     }
+
+    search(root, value) {
+        if (!root) {
+            return false;
+        }
+        if (root.value === value) {
+            return true;
+        } else if (value < root.value) {
+            return this.search(root.left, value);
+        } else {
+            return this.search(root.right, value);
+        }
+    }
 }
 
 const bst = new BinarySearchTree();
