@@ -15,6 +15,7 @@ class BinarySearchTree {
         return this.root === null;
     }
 
+    // * Insert a value into the tree.
     insert(value) {
         const newNode = new Node(value);
         if (this.isEmpty()) {
@@ -40,6 +41,7 @@ class BinarySearchTree {
         }
     }
 
+    // * Search for a value in the tree and returns true if found, false otherwise.
     search(root, value) {
         if (!root) {
             return false;
@@ -50,6 +52,33 @@ class BinarySearchTree {
             return this.search(root.left, value);
         } else {
             return this.search(root.right, value);
+        }
+    }
+
+    // * Pre-order traversal of the tree.
+    preOrder(root) {
+        if (root) {
+            console.log(root.value);
+            this.preOrder(root.left);
+            this.preOrder(root.right);
+        }
+    }
+
+    // * In-order traversal of the tree.
+    inOrder(root) {
+        if (root) {
+            this.inOrder(root.left);
+            console.log(root.value);
+            this.inOrder(root.right);
+        }
+    }
+
+    // * Post-order traversal of the tree.
+    postOrder(root) {
+        if (root) {
+            this.postOrder(root.left);
+            this.postOrder(root.right);
+            console.log(root.value);
         }
     }
 }
@@ -66,3 +95,6 @@ bst.insert(17);
 bst.insert(2);
 console.log(bst.search(bst.root, 10));
 console.log(bst.search(bst.root, 7));
+bst.preOrder(bst.root);
+bst.inOrder(bst.root);
+bst.postOrder(bst.root);
