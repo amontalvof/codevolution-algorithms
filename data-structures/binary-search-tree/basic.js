@@ -81,6 +81,22 @@ class BinarySearchTree {
             console.log(root.value);
         }
     }
+
+    levelOrder() {
+        /** Use the optimized queue enqueue and dequeue from queue-object.js instead. */
+        const queue = [];
+        queue.push(this.root);
+        while (queue.length) {
+            let curr = queue.shift();
+            console.log(curr.value);
+            if (curr.left) {
+                queue.push(curr.left);
+            }
+            if (curr.right) {
+                queue.push(curr.right);
+            }
+        }
+    }
 }
 
 const bst = new BinarySearchTree();
@@ -98,3 +114,4 @@ console.log(bst.search(bst.root, 7));
 bst.preOrder(bst.root);
 bst.inOrder(bst.root);
 bst.postOrder(bst.root);
+bst.levelOrder();
