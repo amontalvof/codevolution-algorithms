@@ -131,5 +131,5 @@ bst.preOrder(bst.root);
 bst.inOrder(bst.root);
 bst.postOrder(bst.root);
 bst.levelOrder();
-console.log(bst.min());
-console.log(bst.max());
+console.log(bst.min(bst.root));
+console.log(bst.max(bst.root));
