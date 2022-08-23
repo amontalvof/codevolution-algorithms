@@ -1,10 +1,10 @@
-# Data Structures and Algorithms
+# Design Patterns, Data Structures and Algorithms
 
-An introduction to the fundamentals of data structures and algorithms.
+An introduction to the fundamentals of design patterns, data structures and algorithms.
 
 ## Technologies
 
--   JavaScript
+-   JavaScript, TypeScript
 
 ## Big-O Trend
 

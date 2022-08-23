@@ -97,6 +97,22 @@ class BinarySearchTree {
             }
         }
     }
+
+    min(root) {
+        if (!root.left) {
+            return root.value;
+        } else {
+            return this.min(root.left);
+        }
+    }
+
+    max(root) {
+        if (!root.right) {
+            return root.value;
+        } else {
+            return this.max(root.right);
+        }
+    }
 }
 
 const bst = new BinarySearchTree();
@@ -115,3 +131,5 @@ bst.preOrder(bst.root);
 bst.inOrder(bst.root);
 bst.postOrder(bst.root);
 bst.levelOrder();
+console.log(bst.min());
+console.log(bst.max());
