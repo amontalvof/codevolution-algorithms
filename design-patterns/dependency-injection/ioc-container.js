@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IoCContainer = void 0;
+exports.Register = exports.IoCContainer = void 0;
 class IoCContainer {
     constructor() {
         this._dependencies = {};
@@ -31,3 +31,10 @@ class IoCContainer {
 }
 exports.IoCContainer = IoCContainer;
 IoCContainer._instance = new IoCContainer();
+function Register(name, dependencies) {
+    let container = IoCContainer.instance;
+    return function (constructor) {
+        container.register(name, dependencies, constructor);
+    };
+}
+exports.Register = Register;
