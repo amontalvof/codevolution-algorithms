@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GameCharactersFactory = void 0;
-class GameCharactersFactory {
-    static getWarrior(level) {
-        let warrior;
+var GameCharactersFactory = /** @class */ (function () {
+    function GameCharactersFactory() {
+    }
+    GameCharactersFactory.getWarrior = function (level) {
+        var warrior;
         if (level < 10) {
             warrior = {
                 strength: 18,
@@ -21,9 +23,9 @@ class GameCharactersFactory {
             };
         }
         return warrior;
-    }
-    static getMage(level) {
-        let mage;
+    };
+    GameCharactersFactory.getMage = function (level) {
+        var mage;
         if (level < 10) {
             mage = {
                 strength: 0,
@@ -41,6 +43,7 @@ class GameCharactersFactory {
             };
         }
         return mage;
-    }
-}
+    };
+    return GameCharactersFactory;
+}());
 exports.GameCharactersFactory = GameCharactersFactory;

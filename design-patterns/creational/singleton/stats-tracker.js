@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StatsTracker = void 0;
-class StatsTracker {
-    constructor() {
+var StatsTracker = /** @class */ (function () {
+    function StatsTracker() {
         this.buttonClicks = 0;
         this.facebookShares = 0;
         this.twitterShares = 0;
@@ -12,9 +12,14 @@ class StatsTracker {
         }
         StatsTracker._instance = this;
     }
-    static get instance() {
-        return StatsTracker._instance;
-    }
-}
+    Object.defineProperty(StatsTracker, "instance", {
+        get: function () {
+            return StatsTracker._instance;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    StatsTracker._instance = new StatsTracker();
+    return StatsTracker;
+}());
 exports.StatsTracker = StatsTracker;
-StatsTracker._instance = new StatsTracker();
