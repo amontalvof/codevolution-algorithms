@@ -13,6 +13,7 @@
     "homepage": "https://github.com/amontalvof/data-structures-and-algorithms#readme",
     "dependencies": {
         "@types/node": "^18.7.14",
+        "axios": "^0.27.2",
         "inversify": "^6.0.1",
         "reflect-metadata": "^0.1.13"
     }

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { Country } from './country';
+import { ICountriesRepository } from './icountries-repository';
 
 export enum Continent {
     Africa = 'Africa',
@@ -10,7 +11,7 @@ export enum Continent {
     Oceania = 'Oceania',
 }
 
-export class CountriesRepository {
+export class CountriesRepository implements ICountriesRepository {
     async all(): Promise<Country[]> {
         return Promise.all(
             [
