@@ -1,0 +1,7 @@
+TypeError: b is not a function
+TypeError: b is not a function
+TypeError: b is not a function
+ReferenceError: c is not defined
+TypeError: b is not a function Mon Sep 12 2022 10:34:40 GMT-0500 (Central Daylight Time)
+ReferenceError: a is not defined, Date: Mon Sep 12 2022 10:36:14 GMT-0500 (Central Daylight Time)
+TypeError: b is not a function, Date: Mon Sep 12 2022 10:36:46 GMT-0500 (Central Daylight Time)
